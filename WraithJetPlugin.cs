@@ -19,7 +19,7 @@ namespace WraithJet
     {
         private const string MyGUID = "com.Bobasaur.WraithJet";
         private const string PluginName = "Wraith Jet";
-        private const string VersionString = "2.2.0";
+        private const string VersionString = "2.3.0";
 
         private static readonly Harmony Harmony = new Harmony(MyGUID);
         public static ManualLogSource Log = new ManualLogSource(PluginName);
