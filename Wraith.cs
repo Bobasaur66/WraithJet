@@ -28,6 +28,7 @@ namespace WraithJet
         public static Atlas.Sprite crafterSprite;
 
         public static Vehicle playerVehicle;
+
         public static float playerVehicleSpeed;
 
         protected float _maxSpeed = 60f;
@@ -69,7 +70,7 @@ namespace WraithJet
         {
             base.Update();
 
-            if (GetKeyDown(KeyCode.F))
+            if (GetKeyDown(WraithJetPlugin.ModConfig.engineToggleKey))
             {
                 WraithEngine.engineHigh = !WraithEngine.engineHigh;
             }
@@ -309,14 +310,6 @@ namespace WraithJet
             }
         }
 
-        public List<VehicleFloodLight> FloodLights
-        {
-            get
-            {
-                return null;
-            }
-        }
-
         public override List<VehicleFloodLight> HeadLights
         {
             get
@@ -480,10 +473,10 @@ namespace WraithJet
             }
         }
 
-        public override float TimeToConstruct { get => 6f; set => base.TimeToConstruct = value; }
+        public override float TimeToConstruct => 6f;
 
-        public override bool CanLeviathanGrab { get => true; set => base.CanLeviathanGrab = value; }
+        public override bool CanLeviathanGrab => true;
 
-        public override bool CanMoonpoolDock { get => base.CanMoonpoolDock; set => base.CanMoonpoolDock = value; }
+        public override bool CanMoonpoolDock => true;
     }
 }

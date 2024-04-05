@@ -12,7 +12,7 @@ namespace WraithJet
 {
     public class WraithFragments
     {
-        public static void Awake()
+        public static void RegisterFragments()
         {
             CustomPrefab wraithFragment = new CustomPrefab("wraithFragment", "Wraith Fragment", "Fragment for a submersible aircraft called the Wraith");
             CloneTemplate gameObject = new CloneTemplate(wraithFragment.Info, "1f5cee66-a02f-4693-a1bd-928c938c7e77");

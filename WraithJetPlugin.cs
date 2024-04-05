@@ -19,7 +19,7 @@ namespace WraithJet
     {
         private const string MyGUID = "com.Bobasaur.WraithJet";
         private const string PluginName = "Wraith Jet";
-        private const string VersionString = "1.0.0";
+        private const string VersionString = "2.2.0";
 
         private static readonly Harmony Harmony = new Harmony(MyGUID);
         public static ManualLogSource Log = new ManualLogSource(PluginName);
@@ -34,14 +34,14 @@ namespace WraithJet
             Harmony.PatchAll();
             Log = Logger;
 
-            UWE.CoroutineHost.StartCoroutine(RegisterThenAwake());
+            UWE.CoroutineHost.StartCoroutine(RegisterThenFragments());
         }
 
-        private IEnumerator RegisterThenAwake()
+        private IEnumerator RegisterThenFragments()
         {
             yield return UWE.CoroutineHost.StartCoroutine(Wraith.Register());
             UWE.CoroutineHost.StartCoroutine(VehicleFramework.VoiceManager.RegisterVoice("WraithAI", modFolder));
-            WraithFragments.Awake();
+            WraithFragments.RegisterFragments();
         }
     }
 }
