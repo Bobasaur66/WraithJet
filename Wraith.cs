@@ -189,7 +189,7 @@ namespace WraithJet
                 str += "It is also currently the most used single-seater general aviation aircraft developed by Alterra.\n";
                 str += "\nIt features:\n";
                 str += "- Two-speed flight controls which double as submersible controls\n";
-                str += "- Variable airfoil to ensure stability when in air or water\n";
+                str += "- Variable airfoil to ensure stability in any fluid\n";
                 str += "- Automatic landing gear functionality\n";
                 str += "- VTOL functionality\n";
                 str += "- Onboard AI\n";
@@ -199,7 +199,7 @@ namespace WraithJet
                 str += "- Base package is not designed for deep sea use; upgrade modules are required for that\n";
                 str += "\nRatings:\n";
                 str += "- Top Speed Low Thrust: 13m/s\n";
-                str += "- Top Speed High Thrust: 76/s\n";
+                str += "- Top Speed High Thrust: 60/s\n";
                 str += "- Max Acceleration: 6m/s/s\n";
                 str += "- Power: Two replaceable power cells in each wing\n";
                 str += "- Dimensions: 4m x 3m x 1.5m\n";
