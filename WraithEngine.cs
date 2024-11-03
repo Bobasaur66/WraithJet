@@ -1,4 +1,5 @@
 ﻿using AircraftLib;
+using AircraftLib.Engines;
 using System;
 using UnityEngine;
 
@@ -28,15 +29,7 @@ namespace VehicleFramework.Engines
         {
             get
             {
-                bool flag = engineHigh == false;
-                if (flag)
-                {
-                    return 1000f;
-                }
-                else
-                {
-                    return 300f;
-                }
+                return 1000f;
             }
         }
 
@@ -92,15 +85,7 @@ namespace VehicleFramework.Engines
         {
             get
             {
-                bool flag = engineHigh == false;
-                if (flag)
-                {
-                    return 4000f;
-                }
-                else
-                {
-                    return 300f;
-                }
+                return 4000f;
             }
         }
 

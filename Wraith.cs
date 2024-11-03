@@ -16,6 +16,8 @@ using VehicleFramework.VehicleTypes;
 using WorldStreaming;
 using static GameInput;
 using AircraftLib;
+using AircraftLib.Managers;
+using AircraftLib.VehicleTypes;
 
 namespace WraithJet
 {
@@ -75,7 +77,7 @@ namespace WraithJet
                 WraithEngine.engineHigh = !WraithEngine.engineHigh;
             }
 
-            AircraftLib.FlightManager.CheckLandingGear(this);
+            FlightManager.CheckLandingGear(this);
         }
 
         public static void GetAssets()
@@ -85,7 +87,7 @@ namespace WraithJet
             bool flag = assetBundle == null;
             if (flag)
             {
-                Logger.Log("Failure loading assetbundle");
+                Debug.Log("[Wraith]: Failure loading assetbundle");
             }
             else
             {
@@ -251,17 +253,11 @@ namespace WraithJet
             get
             {
                 List<VehicleHatchStruct> list = new List<VehicleHatchStruct>();
-                VehicleHatchStruct vehicleHatchStruct = default(VehicleHatchStruct);
-                Transform transform = base.transform.Find("Hatch");
-                vehicleHatchStruct.Hatch = transform.gameObject;
-                vehicleHatchStruct.ExitLocation = transform.Find("ExitPosition");
-                vehicleHatchStruct.SurfaceExitLocation = transform.Find("ExitPosition");
-                list.Add(vehicleHatchStruct);
-                VehicleHatchStruct item = default(VehicleHatchStruct);
-                item.Hatch = base.transform.Find("Collider").gameObject;
-                item.ExitLocation = vehicleHatchStruct.ExitLocation;
-                item.SurfaceExitLocation = vehicleHatchStruct.ExitLocation;
-                list.Add(item);
+                VehicleHatchStruct hatch = default(VehicleHatchStruct);
+                hatch.Hatch = transform.Find("Collider").gameObject;
+                hatch.ExitLocation = transform.Find("Hatch/ExitPosition");
+                hatch.SurfaceExitLocation = transform.Find("Hatch/ExitPosition");
+                list.Add(hatch);
                 return list;
             }
         }
@@ -478,5 +474,7 @@ namespace WraithJet
         public override bool CanLeviathanGrab => true;
 
         public override bool CanMoonpoolDock => true;
+
+        
     }
 }
